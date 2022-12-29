@@ -15,7 +15,7 @@
            <div class="box">
               <div class="box-header with-border">
                 <h3 class="box-title">Data Jabatan</h3>
-                <a href="{{ route('jabatan.add') }}" style="float:right;" type="button" class="btn btn-rounded btn-success mb-5">Tambah Jabatan</a>
+                <a href="{{ route('jabatan.add') }}" style="float:right;" type="button" class="btn btn-rounded btn-success mb-5">Tambah Data</a>
               </div>
               <!-- /.box-header -->
               <div class="box-body">

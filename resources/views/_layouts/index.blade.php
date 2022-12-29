@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
     
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
     <link rel="stylesheet" href="fonts/icomoon/style.css">
@@ -92,7 +93,7 @@
                 </div>
 
                 <div class="col-5 d-flex justify-content-end">
-                  <img src="{{ asset('backend/images/hero_1.jpg') }}" alt="" style="width:50%">
+                  <img src="{{ asset('backend/images/mts.jpeg') }}" alt="" style="width:50%">
                 </div>
               </div>
             </div>
@@ -130,7 +131,7 @@
   
             <div class="course bg-white h-100 align-self-stretch">
               <figure class="m-0">
-                <a href="course-single.html"><img src="{{ asset('backend/images/img_2.jpg') }}" alt="Image" class="img-fluid"></a>
+                <a href="course-single.html"><img src="{{ asset('backend/images/upacara.jpg') }}" alt="Image" class="img-fluid"></a>
               </figure>
               <div class="course-inner-text py-4 px-4">
                 <h3><a href="#">Upacara Memperingati Kemerdekaan</a></h3>
@@ -193,10 +194,11 @@
             {{-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam repellat aut neque! Doloribus sunt non aut reiciendis, vel recusandae obcaecati hic dicta repudiandae in quas quibusdam ullam, illum sed veniam!</p> --}}
             <div class="col-lg-7 text-left">
             <ul>
-              <li>Basket</li>
-              <li>Bola Volly</li>
-              <li>Sepak Bola</li>
+              <li>Hadrah</li>
+              <li>Volly Ball</li>
+              <li>Pencak Silat</li>
               <li>Pramuka</li>
+              <li>Musik</li>
             </ul>
           </div>
           </div>
@@ -207,50 +209,19 @@
     <div class="site-section bg-light" id="kontak">
       <div class="container">
   
-        <div class="row justify-content-center">
-          <div class="col-md-7">
-  
-  
+        <div class="row mb-5 justify-content-center">
+            <div class="col-lg-7 text-center"  data-aos="fade-up" data-aos-delay="">
+              <h2 class="section-title">Kontak</h2>
             
-            <h2 class="section-title mb-3">Kontak</h2>
-          
-            <form method="post" data-aos="fade">
-              <div class="form-group row">
-                <div class="col-md-6 mb-3 mb-lg-0">
-                  <input type="text" class="form-control" placeholder="First name">
-                </div>
-                <div class="col-md-6">
-                  <input type="text" class="form-control" placeholder="Last name">
-                </div>
-              </div>
-  
-              <div class="form-group row">
-                <div class="col-md-12">
-                  <input type="text" class="form-control" placeholder="Subject">
-                </div>
-              </div>
-  
-              <div class="form-group row">
-                <div class="col-md-12">
-                  <input type="email" class="form-control" placeholder="Email">
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-md-12">
-                  <textarea class="form-control" id="" cols="30" rows="10" placeholder="Write your message here."></textarea>
-                </div>
-              </div>
-  
-              <div class="form-group row">
-                <div class="col-md-6">
-                  
-                  <input type="submit" class="btn btn-primary py-3 px-5 btn-block btn-pill" value="Kirim Pesan">
-                </div>
-              </div>
-  
-            </form>
+              <div class="col-lg-7 text-left">
+                <i class="fa fa-whatsapp"> Whatsapp : 082123456789</i>
+                <br>
+                <i class="fa fa-instagram"> Instagram : MtsDaruttarbiyah</i>
+                <br>
+                <i class="fa fa-facebook"> Facebook : MtsDaruttarbiyah</i>
+            </div>
           </div>
-        </div>
+        </div>  
       </div>
     </div>
     
@@ -273,7 +244,7 @@
             </ul>
           </div>
 
-          <div class="col-md-4">
+          <!-- <div class="col-md-4">
             <h3>Subscribe</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt incidunt iure iusto architecto? Numquam, natus?</p>
             <form action="#" class="footer-subscribe">
@@ -282,7 +253,7 @@
                 <input type="submit" class="btn btn-primary rounded-0" value="Subscribe">
               </div>
             </form>
-          </div>
+          </div> -->
 
         </div>
 

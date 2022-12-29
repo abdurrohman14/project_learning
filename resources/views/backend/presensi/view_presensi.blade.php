@@ -14,8 +14,8 @@
 
            <div class="box">
               <div class="box-header with-border">
-                <h3 class="box-title">Data Kelas</h3>
-                <a href="{{ route('kelas.add') }}" style="float:right;" type="button" class="btn btn-rounded btn-success mb-5">Tambah Data</a>
+                <h3 class="box-title">Data Presensi</h3>
+                <a href="{{ route('absen.add') }}" style="float:right;" type="button" class="btn btn-rounded btn-success mb-5">absen</a>
               </div>
               <!-- /.box-header -->
               <div class="box-body">
@@ -24,20 +24,25 @@
                       <thead>
                           <tr>
                               <th>Id</th>
-                              <th>Nama Data</th>
-                              <th>Jumlah Siswa</th>
+                              <th>Guru ID</th>
+                              <th>Waktu</th>
+                              <th>Masuk</th>
+                              <th>Pulang</th>
                               <th>Aksi</th>
                           </tr>
                       </thead>
                       <tbody>
-                        @foreach($allDataKl as $key => $kl)
+                        @foreach($allDataPr as $key => $pr)
                           <tr>
                               <td>{{ $key + 1 }}</td>
-                              <td>{{ $kl->nama_kelas }}</td>
-                              <td>{{ $kl->jumlah_siswa }}</td>
+                              <td>{{ $pr->guru_id }}</td>
+                              <td>{{ $pr->waktu }}</td>
+                              <td>{{ $pr->masuk }}</td>
+                              <td>{{ $pr->pulang }}</td>
                               <td>
-                                <a href="{{ route('kelas.edit', $kl->id) }}" class="btn btn-info">Edit</a>
-                                <a href="{{ route('kelas.delete', $kl->id) }}" id= "delete" class="btn btn-danger">Delete</a>
+                                <a href="{{ route('absen.edit', $pr->id) }}" class="btn btn-info">Edit</a>
+                                <a href="{{ route('absen.delete', $pr->id) }}" id= "delete" class="btn btn-danger">Delete</a>
+                                <a href="{{ route('absen.rekap', $pr->guru_id) }}" id= "rekap" class="btn btn-warning">Rekap</a>
                               </td>
                           </tr>
                           @endforeach

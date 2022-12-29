@@ -16,9 +16,9 @@ class CreatePresensisTable extends Migration
         Schema::create('presensis', function (Blueprint $table) {
             $table->id();
             $table->integer('guru_id');
-            $table->dateTime('waktu');
-            $table->string('masuk');
-            $table->string('pulang');
+            $table->date('waktu');
+            $table->time('masuk');
+            $table->time('pulang');
             $table->timestamps();
         });
     }

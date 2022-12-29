@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class guru extends Model
 {
     use HasFactory;
+
+    public function presensi(){
+        return $this->hasMany(presensi::class);
+    }
 }

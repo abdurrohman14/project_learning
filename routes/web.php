@@ -31,7 +31,7 @@ Route::middleware([
     'verified'
 ])->group(function () {
     Route::get('/dashboard', function () {
-        return view('admin.dashboard');
+        return view('admin.admin_dashboard');
     })->name('dashboard');
 });
 
@@ -39,6 +39,7 @@ Route::middleware([
 
 // Route Logout
 Route::get('/admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
+Route::get('/admin', [AdminController::class, 'dashboard'])->name('admin.dashboard');
 
 // Route crud tabel guru
 Route::prefix('gurus')->group(function(){

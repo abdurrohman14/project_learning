@@ -1,4 +1,4 @@
-@extends('admin.dashboard')
+@extends('admin.body.main')
 @section('admin')
 
 <!-- Content Wrapper. Contains page content -->

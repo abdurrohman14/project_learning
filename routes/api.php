@@ -21,3 +21,45 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('register', [AuthController::class, 'register']);
 Route::post('login', [AuthController::class, 'login']);
+
+// API Jabatan
+// Route::post('jabatan', [AuthController::class, 'createJb']);
+// Route::get('jabatan', [AuthController::class, 'readJb']);
+// Route::get('/jabatan/{id}', [AuthController::class, 'readbyIdJb']);
+// Route::put('/jabatanUpdate/{id}', [AuthController::class, 'updateJb']);
+// Route::delete('/jabatanDelete/{id}', [AuthController::class, 'deletebyIdJb']);
+
+// API Kelas
+// Route::post('kelas', [AuthController::class, 'createKelas']);
+// Route::get('kelas', [AuthController::class, 'readKelas']);
+// Route::get('/kelas/{id}', [AuthController::class, 'readbyIdKelas']);
+// Route::put('/kelasUpdate/{id}', [AuthController::class, 'updateKelas']);
+// Route::delete('/kelasDelete/{id}', [AuthController::class, 'deletebyIdKelas']);
+
+// API Siswa
+// Route::post('siswa', [AuthController::class, 'createSiswa']);
+// Route::get('siswa', [AuthController::class, 'readSiswa']);
+// Route::get('/siswa/{id}', [AuthController::class, 'readbyIdSiswa']);
+// Route::put('/siswaUpdate/{id}', [AuthController::class, 'updateSiswa']);
+// Route::delete('/siswaDelete/{id}', [AuthController::class, 'deletebyIdSiswa']);
+
+// API Buku
+// Route::post('buku', [AuthController::class, 'createBuku']);
+// Route::get('buku', [AuthController::class, 'readBuku']);
+// Route::get('/buku/{id}', [AuthController::class, 'readbyIdBuku']);
+// Route::put('/bukuUpdate/{id}', [AuthController::class, 'updateBuku']);
+// Route::delete('/bukuDelete/{id}', [AuthController::class, 'deletebyIdBuku']);
+
+// API Film
+Route::post('film', [AuthController::class, 'createFilm']);
+Route::get('film', [AuthController::class, 'readFilm']);
+Route::get('/film/{id}', [AuthController::class, 'readbyIdFilm']);
+Route::put('/filmUpdate/{id}', [AuthController::class, 'updateFilm']);
+Route::delete('/filmDelete/{id}', [AuthController::class, 'deletebyIdFilm']);
+
+// API Bahan Bakar
+// Route::post('bahanbakar', [AuthController::class, 'createBahanBakar']);
+// Route::get('bahanbakar', [AuthController::class, 'readBahanbakar']);
+// Route::get('/bahanbakar/{id}', [AuthController::class, 'readbyIdBahanBakar']);
+// Route::put('/bahanbakarUpdate/{id}', [AuthController::class, 'updateBahanBakar']);
+// Route::delete('/bahanbakarDelete/{id}', [AuthController::class, 'deletebyIdBahanBakar']);

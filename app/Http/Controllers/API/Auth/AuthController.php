@@ -3,9 +3,15 @@
 namespace App\Http\Controllers\API\Auth;
 
 use App\Models\User;
+// use App\Models\jabatan;
+// use App\Models\kelas;
+// use App\Models\siswa;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+// use App\models\buku;
+use App\models\film;
+// use App\models\bahanbakar;
 
 class AuthController extends Controller
 {
@@ -56,4 +62,234 @@ class AuthController extends Controller
             'email' => $user->email,
         ], 200);
     }
+
+    // public function createJb(Request $request) {
+    //     $jabatan = new jabatan();
+
+    //     $jabatan->nama_jabatan=$request->input('nama_jabatan');
+
+    //     $jabatan->save();
+    //     return response()->json($jabatan);
+    // }
+
+    // public function readJb() {
+    //     $jabatan = jabatan::all();
+    //     return response()->json($jabatan);
+    // }
+
+    // public function readbyIdJb($id) {
+    //     $jabatan = jabatan::find($id);
+    //     return response()->json($jabatan);
+    // }
+
+    // public function updateJb(Request $request, $id) {
+    //     $jabatan = jabatan::find($id);
+
+    //     $jabatan->nama_jabatan=$request->input('nama_jabatan');
+
+    //     $jabatan->save();
+    //     return response()->json($jabatan);
+    // }
+
+    // public function deletebyIdJb(Request $request, $id) {
+    //     $jabatan = jabatan::find($id);
+    //     $jabatan->delete();
+
+    //     return response()->json($jabatan);
+    // }
+
+    // // KELAS
+    // public function createKelas(Request $request) {
+    //     $kelas = new kelas();
+
+    //     $kelas->nama_kelas=$request->input('nama_kelas');
+    //     $kelas->jumlah_siswa=$request->input('jumlah_siswa');
+
+    //     $kelas->save();
+    //     return response()->json($kelas);
+    // }
+
+    // public function readKelas() {
+    //     $kelas = kelas::all();
+    //     return response()->json($kelas);
+    // }
+
+    // public function readbyIdKelas($id) {
+    //     $kelas = kelas::find($id);
+    //     return response()->json($kelas);
+    // }
+
+    // public function updateKelas(Request $request, $id) {
+    //     $kelas = kelas::find($id);
+
+    //     $kelas->nama_kelas=$request->input('nama_kelas');
+    //     $kelas->jumlah_siswa=$request->input('jumlah_siswa');
+
+    //     $kelas->save();
+    //     return response()->json($kelas);
+    // }
+
+    // public function deletebyIdKelas(Request $request, $id) {
+    //     $kelas = kelas::find($id);
+    //     $kelas->delete();
+
+    //     return response()->json($kelas);
+    // }
+
+    // // Siswa
+    // public function createSiswa(Request $request) {
+    //     $siswa = new siswa();
+
+    //     $siswa->kelas_id=$request->input('kelas_id');
+    //     $siswa->nama_siswa=$request->input('nama_siswa');
+
+    //     $siswa->save();
+    //     return response()->json($siswa);
+    // }
+
+    // public function readSiswa() {
+    //     $siswa = siswa::all();
+    //     return response()->json($siswa);
+    // }
+
+    // public function readbyIdSiswa($id) {
+    //     $siswa = siswa::find($id);
+    //     return response()->json($siswa);
+    // }
+
+    // public function updateSiswa(Request $request, $id) {
+    //     $siswa = siswa::find($id);
+
+    //     $siswa->kelas_id=$request->input('kelas_id');
+    //     $siswa->nama_siswa=$request->input('nama_siswa');
+
+    //     $siswa->save();
+    //     return response()->json($siswa);
+    // }
+
+    // public function deletebyIdSiswa(Request $request, $id) {
+    //     $siswa = siswa::find($id);
+    //     $siswa->delete();
+
+    //     return response()->json($siswa);
+    // }
+
+    //  // Buku
+    //  public function createBuku(Request $request) {
+    //     $buku = new buku();
+
+    //     $buku->kodeBuku=$request->input('kodeBuku');
+    //     $buku->judulBuku=$request->input('judulBuku');
+    //     $buku->namaPengarang=$request->input('namaPengarang');
+
+    //     $buku->save();
+    //     return response()->json($buku);
+    // }
+
+    // public function readbuku() {
+    //     $buku = buku::all();
+    //     return response()->json($buku);
+    // }
+
+    // public function readbyIdbuku($id) {
+    //     $buku = buku::find($id);
+    //     return response()->json($buku);
+    // }
+
+    // public function updatebuku(Request $request, $id) {
+    //     $buku = buku::find($id);
+
+    //     $buku->kodeBuku=$request->input('kodeBuku');
+    //     $buku->judulBuku=$request->input('judulBuku');
+    //     $buku->namaPengarang=$request->input('namaPengarang');
+
+    //     $buku->save();
+    //     return response()->json($buku);
+    // }
+
+    // public function deletebyIdbuku(Request $request, $id) {
+    //     $buku = buku::find($id);
+    //     $buku->delete();
+
+    //     return response()->json($buku);
+    // }
+    
+    // Film
+    public function createFilm(Request $request) {
+        $film = new film();
+
+        $film->judulfilm=$request->input('judulFilm');
+        $film->jenisfilm=$request->input('jenisFilm');
+
+        $film->save();
+        return response()->json($film);
+    }
+
+    public function readfilm() {
+        $film = film::all();
+        return response()->json($film);
+    }
+
+    public function readbyIdfilm($id) {
+        $film = film::find($id);
+        return response()->json($film);
+    }
+
+    public function updatefilm(Request $request, $id) {
+        $film = film::find($id);
+
+        $film->judulFilm=$request->input('judulFilm');
+        $film->jenisFilm=$request->input('jenisFilm');
+
+        $film->save();
+        return response()->json($film);
+    }
+
+    public function deletebyIdfilm(Request $request, $id) {
+        $film = film::find($id);
+        $film->delete();
+
+        return response()->json($film);
+    }
+    
+ // Bahan Bakar
+//  public function createBahanBakar(Request $request) {
+//     $bahanbakar = new bahanbakar();
+
+//     $bahanbakar->kodeBBM=$request->input('kodeBBM');
+//     $bahanbakar->namaBBM=$request->input('namaBBM');
+//     $bahanbakar->hargaBBM=$request->input('hargaBBM');
+
+//     $bahanbakar->save();
+//     return response()->json($bahanbakar);
+// }
+
+// public function readbahanbakar() {
+//     $bahanbakar = bahanbakar::all();
+//     return response()->json($bahanbakar);
+// }
+
+// public function readbyIdbahanbakar($id) {
+//     $bahanbakar = bahanbakar::find($id);
+//     return response()->json($bahanbakar);
+// }
+
+// public function updatebahanbakar(Request $request, $id) {
+//     $bahanbakar = bahanbakar::find($id);
+
+//     $bahanbakar->kodeBBM=$request->input('kodeBBM');
+//     $bahanbakar->namaBBM=$request->input('namaBBM');
+//     $bahanbakar->hargaBBM=$request->input('hargaBBM');
+
+//     $bahanbakar->save();
+//     return response()->json($bahanbakar);
+// }
+
+// public function deletebyIdbahanbakar(Request $request, $id) {
+//     $bahanbakar = bahanbakar::find($id);
+//     $bahanbakar->delete();
+
+//     return response()->json($bahanbakar);
+// }
+
 }

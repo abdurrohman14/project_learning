@@ -21,10 +21,10 @@ use App\Http\Controllers\moviecontroller;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('_layouts.index');
-});
+require __DIR__.'/lpWeb.php';
+// Route::get('/', function () {
+//     return view('_layouts.index');
+// });
 
 Route::middleware([
     'auth:sanctum',

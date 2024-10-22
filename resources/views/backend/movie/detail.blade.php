@@ -24,7 +24,7 @@
                 <div class="row mb-3">
                     <label for="inputText" class="col-sm-2 col-form-label">Image</label>
                     <div class="col-sm-10">
-                     <img src="{{ asset('storage/movie/' . $movie->img_url) }}">
+                     <img src="{{ asset('storage/movie/' . $movie->img_url) }}" width="100px">
                     </div>
                 </div>
                 <div class="row mb-3">

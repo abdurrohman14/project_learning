@@ -2,9 +2,16 @@
 
 namespace App\Http\Controllers\Backend;
 
+<<<<<<< HEAD
 use App\Http\Controllers\Controller;
 use App\Models\presensi;
 use Illuminate\Http\Request;
+=======
+use App\Models\guru;
+use App\Models\presensi;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+>>>>>>> 773351a6dde0bd4fbbfd938d1af4aa21dc478e1e
 
 class PresensiController extends Controller
 {
@@ -59,4 +66,14 @@ class PresensiController extends Controller
 
         return redirect()->route('absen.view')->with('info', 'Delete Presensi berhasil');
     }
+<<<<<<< HEAD
+=======
+
+    public function Rekap($guru_id) {
+        $kehadiran['kehadiran'] = presensi::where('guru_id', '=', $guru_id)->count();
+        $namaGuru['namaGuru'] = guru::find($guru_id);
+        // dd($kehadiran);
+        return view('backend.rekap.rekap', $kehadiran, $namaGuru);
+    }
+>>>>>>> 773351a6dde0bd4fbbfd938d1af4aa21dc478e1e
 }

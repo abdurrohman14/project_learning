@@ -2,10 +2,18 @@
 
 namespace App\Http\Controllers\API\Auth;
 
+use App\Models\guru;
 use App\Models\User;
+<<<<<<< HEAD
 // use App\Models\jabatan;
 // use App\Models\kelas;
 // use App\Models\siswa;
+=======
+use App\Models\kelas;
+use App\Models\siswa;
+use App\Models\jabatan;
+use App\Models\presensi;
+>>>>>>> 773351a6dde0bd4fbbfd938d1af4aa21dc478e1e
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -63,6 +71,7 @@ class AuthController extends Controller
         ], 200);
     }
 
+<<<<<<< HEAD
     // public function createJb(Request $request) {
     //     $jabatan = new jabatan();
 
@@ -293,3 +302,202 @@ class AuthController extends Controller
 // }
 
 }
+=======
+    // GURU
+    public function create(Request $request) {
+        $guru = new guru();
+
+        $guru->nip=$request->input('nip');
+        $guru->nama=$request->input('nama');
+        $guru->email=$request->input('email');
+        $guru->jabatan_id=$request->input('jabatan_id');
+
+        $guru->save();
+        return response()->json($guru);
+    }
+
+    public function read() {
+        $guru = guru::all();
+        return response()->json($guru);
+    }
+
+    public function readbyId($id) {
+        $guru = guru::find($id);
+        return response()->json($guru);
+    }
+
+    public function update(Request $request, $id) {
+        $guru = guru::find($id);
+
+        $guru->nip=$request->input('nip');
+        $guru->nama=$request->input('nama');
+        $guru->email=$request->input('email');
+        $guru->jabatan_id=$request->input('jabatan_id');
+
+        $guru->save();
+        return response()->json($guru);
+    }
+
+    public function deletebyId(Request $request, $id) {
+        $guru = guru::find($id);
+        $guru->delete();
+
+        return response()->json($guru);
+    }
+
+    // JABATAN
+    public function createJb(Request $request) {
+        $jabatan = new jabatan();
+
+        $jabatan->nama_jabatan=$request->input('nama_jabatan');
+
+        $jabatan->save();
+        return response()->json($jabatan);
+    }
+
+    public function readJb() {
+        $jabatan = jabatan::all();
+        return response()->json($jabatan);
+    }
+
+    public function readbyIdJb($id) {
+        $jabatan = jabatan::find($id);
+        return response()->json($jabatan);
+    }
+
+    public function updateJb(Request $request, $id) {
+        $jabatan = jabatan::find($id);
+
+        $jabatan->nama_jabatan=$request->input('nama_jabatan');
+
+        $jabatan->save();
+        return response()->json($jabatan);
+    }
+
+    public function deletebyIdJb(Request $request, $id) {
+        $jabatan = jabatan::find($id);
+        $jabatan->delete();
+
+        return response()->json($jabatan);
+    }
+
+    // KELAS
+    public function createKelas(Request $request) {
+        $kelas = new kelas();
+
+        $kelas->nama_kelas=$request->input('nama_kelas');
+        $kelas->jumlah_siswa=$request->input('jumlah_siswa');
+
+        $kelas->save();
+        return response()->json($kelas);
+    }
+
+    public function readKelas() {
+        $kelas = kelas::all();
+        return response()->json($kelas);
+    }
+
+    public function readbyIdKelas($id) {
+        $kelas = kelas::find($id);
+        return response()->json($kelas);
+    }
+
+    public function updateKelas(Request $request, $id) {
+        $kelas = kelas::find($id);
+
+        $kelas->nama_kelas=$request->input('nama_kelas');
+        $kelas->jumlah_siswa=$request->input('jumlah_siswa');
+
+        $kelas->save();
+        return response()->json($kelas);
+    }
+
+    public function deletebyIdKelas(Request $request, $id) {
+        $kelas = kelas::find($id);
+        $kelas->delete();
+
+        return response()->json($kelas);
+    }
+
+    // Siswa
+    public function createSiswa(Request $request) {
+        $siswa = new siswa();
+
+        $siswa->kelas_id=$request->input('kelas_id');
+        $siswa->nama_siswa=$request->input('nama_siswa');
+
+        $siswa->save();
+        return response()->json($siswa);
+    }
+
+    public function readSiswa() {
+        $siswa = siswa::all();
+        return response()->json($siswa);
+    }
+
+    public function readbyIdSiswa($id) {
+        $siswa = siswa::find($id);
+        return response()->json($siswa);
+    }
+
+    public function updateSiswa(Request $request, $id) {
+        $siswa = siswa::find($id);
+
+        $siswa->kelas_id=$request->input('kelas_id');
+        $siswa->nama_siswa=$request->input('nama_siswa');
+
+        $siswa->save();
+        return response()->json($siswa);
+    }
+
+    public function deletebyIdSiswa(Request $request, $id) {
+        $siswa = siswa::find($id);
+        $siswa->delete();
+
+        return response()->json($siswa);
+    }
+
+    // Presensi
+    public function createPresensi(Request $request) {
+        $presensi = new presensi();
+
+        $presensi->guru_id=$request->input('guru_id');
+        $presensi->waktu=$request->input('waktu');
+        $presensi->masuk=$request->input('masuk');
+        $presensi->pulang=$request->input('pulang');
+
+        $presensi->save();
+        return response()->json($presensi);
+    }
+
+    public function readPresensi() {
+        $presensi = presensi::all();
+        return response()->json($presensi);
+    }
+
+    public function readbyIdPresensi($id) {
+        $presensi = presensi::find($id);
+        return response()->json($presensi);
+    }
+
+    public function updatePresensi(Request $request, $id) {
+        $presensi = presensi::find($id);
+
+        $presensi->guru_id=$request->input('guru_id');
+        $presensi->waktu=$request->input('waktu');
+        $presensi->masuk=$request->input('masuk');
+        $presensi->pulang=$request->input('pulang');
+
+        $presensi->save();
+        return response()->json($presensi);
+    }
+
+    public function deletebyIdPresensi(Request $request, $id) {
+        $presensi = presensi::find($id);
+        $presensi->delete();
+
+        return response()->json($presensi);
+    }
+
+}
+>>>>>>> 773351a6dde0bd4fbbfd938d1af4aa21dc478e1e
